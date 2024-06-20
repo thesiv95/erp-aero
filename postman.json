@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "a11c6e3e-93e3-4477-a551-f2f02d53d038",
+		"name": "ERP.aero",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28348184"
+	},
+	"item": [
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "Upload new file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filename",
+									"type": "file",
+									"src": "postman-cloud:///1ef0d0e7-0620-4530-8778-1c767c73a666"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/file/upload",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"file",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/file/list",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"file",
+								"list"
+							],
+							"query": [
+								{
+									"key": "list_size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/file/delete/22",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"file",
+								"delete",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get file info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/file/25",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"file",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/file/download/28",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"file",
+								"download",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filename",
+									"type": "file",
+									"src": "postman-cloud:///1ef0d3f1-af13-41d0-b6f0-0d17fc98f3d1"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/file/update/28",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"file",
+								"update",
+								"28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Latency",
+			"item": [
+				{
+					"name": "Root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/latency",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"latency"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"user3@gmail.com\",\r\n    \"password\": \"user3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/auth/signup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"user2@gmail.com\",\r\n    \"password\": \"user2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/auth/signin",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/auth/signin/new_token",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signin",
+								"new_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/auth/info",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/auth/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Main page",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}",
+					"host": [
+						"{{baseURL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InVzZXIyQGdtYWlsLmNvbSIsIm5hbWUiOiJKZXJlbXkgS2VlbGluZyIsImlhdCI6MTcxODg0ODkxMiwiZXhwIjoxNzE4ODQ5NTEyfQ.4BUp-SWm1wImjiUc_YWfDgUg4xT4i10NylqWDjq7rV8",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
