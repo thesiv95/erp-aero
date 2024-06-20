@@ -1,8 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../db.js";
 
-/*  название, расширение, MIME type, размер, дата */
-
 const File = sequelize.define(
   "file",
   {
